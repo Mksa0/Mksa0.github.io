@@ -12,7 +12,7 @@
 
   <script>
   (async () => {
-    const target = "https://p.grabtaxi.com/offers-discovery/v1/campaigns/123?latitude=1&longitude=1";
+    const target = "https://p.grabtaxi.com/offers-discovery/v1/campaigns/:campaignID?latitude=1.27729&longitude=103.8521";
     try {
       const res  = await fetch(target, { method: "GET", credentials: "include", mode: "cors" });
       const text = await res.text();
