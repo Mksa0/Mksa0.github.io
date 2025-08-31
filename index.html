@@ -1,1 +1,18 @@
-
+<!doctype html>
+<meta charset="utf-8">
+<h1>CORS Test with Bug Bounty Header</h1>
+<pre id="out">loading…</pre>
+<script>
+fetch("https://public.grab.com/x-transmitter/v2/...", {
+  method: "POST",
+  headers: {
+    "X-Bug-Bounty": "HackerOne-itsprocess0",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({ test: "1" }),
+  credentials: "include"
+})
+.then(r => r.text())
+.then(t => document.getElementById('out').textContent = t)
+.catch(e => document.getElementById('out').textContent = "Error: " + e);
+</script>
